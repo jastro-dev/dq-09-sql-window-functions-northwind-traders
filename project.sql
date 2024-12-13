@@ -2,3 +2,12 @@
 
 -- Drop photo column (data type unviewable)
 ALTER TABLE employees DROP COLUMN photo;
+
+-- Table List
+SELECT
+    table_name AS name,
+    table_type AS type
+FROM information_schema.tables
+WHERE
+    table_schema = 'public'
+    AND table_type IN ('BASE TABLE', 'VIEW');
