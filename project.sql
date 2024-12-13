@@ -11,3 +11,12 @@ FROM information_schema.tables
 WHERE
     table_schema = 'public'
     AND table_type IN ('BASE TABLE', 'VIEW');
+
+-- Column List
+SELECT
+    table_name AS TABLE,
+    column_name AS COLUMN,
+    ordinal_position AS pos
+FROM information_schema.columns
+WHERE
+    table_schema = 'public';
